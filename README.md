@@ -60,4 +60,4 @@ Pe parcursul realizarii scriptului am avut nevoie de alte cateva librarii pe car
 	
 	5. Pentru combinarea inregistrarilor audi/video folosesc libraria 'ffmpeg' care imi permite doar printr-o simpla linie de comanda trimisa in terminal sa obtin fisierul video cu audio integrat. 
 	
-	 • Singura problema ce ar putea sa apara la rularea comenzii ar fi lipsa unuia dintre fisiere sau a ambelor si existenta deja a fisierului final, comanda neavand posibilitatea de a-l suprascrie. 
+	 • Singura problema ce ar putea sa apara la rularea comenzii ar fi lipsa unuia dintre fisiere sau a ambelor si existenta deja a fisierului final, comanda neavand posibilitatea de a-l suprascrie pentru ca am ales sa creeze fisierul ca sa evit aventualele erori. 
