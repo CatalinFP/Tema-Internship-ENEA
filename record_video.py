@@ -10,7 +10,7 @@ def record_video(duration):
     SCREEN_SIZE = pyautogui.size()
 
     codec = cv2.VideoWriter_fourcc(*'MJPG')
-    out = cv2.VideoWriter("record_video.avi", codec, 5.5, (SCREEN_SIZE))
+    out = cv2.VideoWriter("./Tema Internship/record_video.avi", codec, 5.5, (SCREEN_SIZE))
     cv2.namedWindow("screen_record", cv2.WINDOW_NORMAL)
     capture_duration = duration
 

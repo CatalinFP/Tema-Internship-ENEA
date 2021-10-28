@@ -3,10 +3,10 @@ import wave
 
 
 def record_audio(duration):
-    filename = "record_audio.wav"
+    filename = "./Tema Internship/record_audio.wav"
     chunk = 1024
     FORMAT = pyaudio.paInt16
-    channels = 2
+    channels = 1
     sample_rate = 44400
     record_seconds = duration
     # device = 'digital output'
