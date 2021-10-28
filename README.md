@@ -1,7 +1,7 @@
 # Tema-Internship-ENEA
 
 Sistemul de operare este Ubuntu(last version)
-Instalarea programelor a fost relativ simplu de facut, toate fiind realizate in terminal doar cu cateva comenzi:
+# Instalare si configurare
 
 	1. Python 3 - instalat folosind comanda "apt-get install python3" + update
 	
@@ -19,18 +19,16 @@ Instalarea programelor a fost relativ simplu de facut, toate fiind realizate in 
 		- sudo apt-get install ffmpeg libav-tools
 		- sudo pip install pyaudio
 	
-	5. Pentru a folosi selenium sa accesez browser-ul Chrome ama vut nevoie de o extensie 
-numita "chromium" la care a durat ceva pana sa gasesc comanda corecta pentru a fi adaugat in PATH "chromedriver.exe, in final am reusit sa instalez tot ce aveam nevoie si dupa un mic test am reusit sa deschid o pagina web printr-un script in python utilizand selenium.
+	5. Pentru a folosi selenium sa accesez browser-ul Chrome ama vut nevoie de o extensie numita "chromium" la care a durat ceva pana sa gasesc comanda corecta pentru a fi adaugat in PATH "chromedriver.exe, in final am reusit sa instalez tot ce aveam nevoie si dupa un mic test am reusit sa deschid o pagina web printr-un script in python utilizand selenium.
 		- sudo apt install chromium-browser
 	
 Dupa instalarea fiecarui program am verificat si ulterior existenta acestuia si versiunea.
 In continuare m-am folosit de Visual Studio Code pentru realizarea scripturilor deoarce imi era mai la indemana.
 
-Realizarea scriptului:
-Pe parcursul realizarii scriptului am avut nevoie de alte cateva librarii pe care VS Code nu le avea si a necesitat instalarea lor ulterioar (m-am folosit de ‘pip’ si ‘apt-get’)
+# Realizarea scriptului
+Pe parcursul realizarii scriptului am avut nevoie de alte cateva librarii pe care VS Code nu le avea si a necesitat instalarea lor ulterioar (m-am folosit de ‘pip’ si ‘apt-get’).
 
-	1. Incercarea de accesare a www.youtube.com cu selenium a venit cu o eroare deoarece 
-era nevoie sa intalez "tkinter" pentru a mapa mausul in chromium dupa care am accesat cu succes YouTube.
+	1. Incercarea de accesare a www.youtube.com cu selenium a venit cu o eroare deoarece era nevoie sa intalez "tkinter" pentru a mapa mausul in chromium dupa care am accesat cu succes YouTube.
 
     • Prima problema intampinata dupa ce am accesat Youtube a fost mesajul de tip pop-up pentru cookies, unde trebuia sa selectez butonul de 'Accept' pentur a putea continua navigarea. Dupa putin research am aflat ca ma pot folosi de 'find_element' si limbajul Xpath pentru a spune programului sa apese pe buton, dar imediat ce am accesat sursa  paginii am vazut ca fereastra respectiva este in CSS (javascript), iar Xpath  nu "vede" nimic din aceasta in sursa. Dar am gasit o metoda de a cauta dupa 'CSS_SELECTOR' acel buton si prin adaugarea la final a comenzii 'click()' am resuit sa inchid fereastra. 
 
@@ -54,5 +52,4 @@ era nevoie sa intalez "tkinter" pentru a mapa mausul in chromium dupa care am ac
 
     • Cum microfonul laptopului este destul de slab ca si performanta, pe inregistrare se aud si alte ‘zgomote’ pe langa ce ar trebui sa inregistreze, rezultatul nefiind foarte calitativ. Pentru a avea o inregistrare cat mai buna ar trebui sa folosesc un microfon extern, eventual unul care sa anuleze aceste zgomote de fundal pentru o procesare cat mai calitativa a sunetului.  
 
-4. Extragerea nivelului sunetului in decibeli din fisierul audi o fac cu ajutorul librariei
-‘scipy’ de la care folosesc ‘wavfile’ cu ajutorul careia extrag din fisier rata si matricea de date. Pe 	langa aceasta mai folosesc si libraria ‘audioop’ prin extrag puterea semnalului audio (pe baza 	datelor din matricea de date) asupra careia aplic formula matematica 20log(10)*(valoare), obtinand 	astfel valoarea in decibeli a sunetului pe care-l salvez intr-un fisier.
+	4. Extragerea nivelului sunetului in decibeli din fisierul audi o fac cu ajutorul librariei ‘scipy’ de la care folosesc ‘wavfile’ cu ajutorul careia extrag din fisier rata si matricea de date. Pe langa aceasta mai folosesc si libraria ‘audioop’ prin extrag puterea semnalului audio (pe baza datelor din matricea de date) asupra careia aplic formula matematica 20log(10)*(valoare), obtinand astfel valoarea in decibeli a sunetului pe care-l salvez intr-un fisier.
