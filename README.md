@@ -55,3 +55,9 @@ Pe parcursul realizarii scriptului am avut nevoie de alte cateva librarii pe car
     • Cum microfonul laptopului este destul de slab ca si performanta, pe inregistrare se aud si alte ‘zgomote’ pe langa ce ar trebui sa inregistreze, rezultatul nefiind foarte calitativ. Pentru a avea o inregistrare cat mai buna ar trebui sa folosesc un microfon extern, eventual unul care sa anuleze aceste zgomote de fundal pentru o procesare cat mai calitativa a sunetului.  
 
 	4. Extragerea nivelului sunetului in decibeli din fisierul audi o fac cu ajutorul librariei ‘scipy’ de la care folosesc ‘wavfile’ cu ajutorul careia extrag din fisier rata si matricea de date. Pe langa aceasta mai folosesc si libraria ‘audioop’ prin extrag puterea semnalului audio (pe baza datelor din matricea de date) asupra careia aplic formula matematica 20log(10)*(valoare), obtinand astfel valoarea in decibeli a sunetului pe care-l salvez intr-un fisier.
+	
+	 • Varianta aceasta nu a fost prima abordata in incercarea de extragere valoarea sunetului in decibeli. Prima a fost folosirea unei formule matematici putin mai complexa aplicata fara a mai folosi 'audioop' doar 'wavfile', iar formula gasita intr-o documentatie despre procesarea sunetului din fisiere '.wav' era '20log10(sqrt(abs(valoare^2)))', dar am observat ca valorile returnate erau gresite intre [10, 30] dB (valorile normale ar fi >50dB) si multe falori de tip 'nan' 
+	
+	5. Pentru combinarea inregistrarilor audi/video folosesc libraria 'ffmpeg' care imi permite doar printr-o simpla linie de comanda trimisa in terminal sa obtin fisierul video cu audio integrat. 
+	
+	 • Singura problema ce ar putea sa apara la rularea comenzii ar fi lipsa unuia dintre fisiere sau a ambelor si existenta deja a fisierului final, comanda neavand posibilitatea de a-l suprascrie. 
