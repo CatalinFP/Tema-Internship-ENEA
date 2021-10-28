@@ -30,7 +30,9 @@ Pe parcursul realizarii scriptului am avut nevoie de alte cateva librarii pe car
 
 	1. Incercarea de accesare a www.youtube.com cu selenium a venit cu o eroare deoarece era nevoie sa intalez "tkinter" pentru a mapa mausul in chromium dupa care am accesat cu succes YouTube.
 
-    • Prima problema intampinata dupa ce am accesat Youtube a fost mesajul de tip pop-up pentru cookies, unde trebuia sa selectez butonul de 'Accept' pentur a putea continua navigarea. Dupa putin research am aflat ca ma pot folosi de 'find_element' si limbajul Xpath pentru a spune programului sa apese pe buton, dar imediat ce am accesat sursa  paginii am vazut ca fereastra respectiva este in CSS (javascript), iar Xpath  nu "vede" nimic din aceasta in sursa. Dar am gasit o metoda de a cauta dupa 'CSS_SELECTOR' acel buton si prin adaugarea la final a comenzii 'click()' am resuit sa inchid fereastra. 
+    • Prima problema intampinata dupa ce am accesat Youtube a fost mesajul de tip pop-up pentru cookies, unde trebuia sa selectez butonul de 'Accept' pentur a putea continua navigarea. Dupa putin research am aflat ca ma pot folosi de 'find_element' si limbajul Xpath pentru a spune programului sa apese pe buton, dar imediat ce am accesat sursa  paginii am vazut ca fereastra respectiva este in CSS (javascript), iar Xpath  nu "vede" nimic din aceasta in sursa. Dar am gasit o metoda de a cauta dupa 'CSS_SELECTOR' acel buton si prin adaugarea la final a comenzii 'click()' am resuit sa inchid fereastra.
+    
+    • De asemenea lipsa unei conexiuni la internet sau pierderea acesteia in timpul rularii ar duce la imposibilitatea finalizarii procesului de navigare, in browser afisandu-se eroarea 'No internet connection' la fel si in terminal.
 
     • Ulterior am realizat realizat procesul de navigare, indentificarea zonei de search unde am transmis un cuvant dupa care sa se faca cautare, iar cu ajutorul functiei ‘random’ de la 0 pana la numarul de linkuri afisate in pagina am extras unul pe care il va accesa.
 	
