@@ -15,13 +15,13 @@ def main():
     get_time = 5 #record video/audio time
 
     try:
-        # search_ytb = Thread(target=search_youtube(search_key = "python"))
+        search_ytb = Thread(target=search_youtube(search_key = "python"))
         rec_vid = Thread(target=record_video, args=(get_time, ))
         rec_aud = Thread(target=record_audio, args=(get_time, ))
         db = Thread(target=extract_db_file)
 
-        # search_ytb.start()
-        # search_ytb.join()
+        search_ytb.start()
+        search_ytb.join()
 
         rec_vid.start()
         rec_aud.start()
@@ -42,10 +42,10 @@ def main():
     except subprocess.SubprocessError:
         print("Missing files!")
 
-    # try:
-    #     db.start()
-    # except Exception as e:
-    #     print("No such file or directory!", e)
+    try:
+        db.start()
+    except Exception as e:
+        print("No such file or directory!", e)
 
 
 if __name__ == '__main__':
