@@ -11,10 +11,12 @@ import subprocess
 
 if __name__ == '__main__':
 
+    get_time = 10 #record video/audio time
+
     try:
         search_ytb = Thread(target=search_youtube(search_key = "python"))
-        rec_vid = Thread(target=record_video)
-        rec_aud = Thread(target=record_audio)
+        rec_vid = Thread(target=record_video(duration = get_time))
+        rec_aud = Thread(target=record_audio(duration = get_time))
         db = Thread(target=extract_db_file)
 
         search_ytb.start()
